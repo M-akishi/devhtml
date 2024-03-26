@@ -22,15 +22,15 @@ function calcularEstadoPeso(pesoIdeal) {
 
   //estructura de decision para comparar peso actual y peso ideal
   if (pesoActual == pesoIdeal) {
-    estadoPeso = "peso ideal";
+    estadoPeso = '<div class="alert alert-success" role="alert">Estado Peso: Peso correcto</div>';
     imagen = "correctweight.png";
   } else {
     //evaluamos si esta sobrepeso o bajo peso
     if (pesoActual > pesoIdeal) {
-      estadoPeso = "sobrepeso";
+      estadoPeso = '<div class="alert alert-danger" role="alert">Estado Peso: Sobrepeso</div>';
       imagen = "overweight.png";
     } else {
-      estadoPeso = "bajo peso";
+      estadoPeso = '<div class="alert alert-warning" role="alert">Estado Peso: Bajo Peso</div>';
       imagen = "underweight.png";
     }
   }
@@ -48,8 +48,7 @@ function calcularEstadoPeso(pesoIdeal) {
     document.getElementById("cnt_diferencia_peso").innerHTML = `No hay diferencia de peso`;
   }
 
-  document.getElementById("cnt_estado_peso_texto").innerHTML =
-    "Estado de peso es: " + estadoPeso + ".";
+  document.getElementById("cnt_estado_peso_texto").innerHTML = estadoPeso;
   document.getElementById(
     "cnt_estado_peso_imagen"
   ).innerHTML = `<img src="img/${imagen}" width="128" height="128">`;

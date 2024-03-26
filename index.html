@@ -3,41 +3,68 @@
     <title>Document</title>
     <!--vinculamos el archivo js-->
     <script src="js/funciones.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div id="father">
-      <h1>peso ideal</h1>
-      <hr />
-      <div id="forms">
+    <div class="container">
+      <div id="father">
+        <nav class="navbar bg-primary" data-bs-theme="dark">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">PESO IDEAL</span>
+          </div>
+        </nav>
+        <hr />
         <div>ingrese los datos solicitados</div>
-        <div>
-            <form>
-                <table>
-                    <tr>
-                        <td>Edad</td>
-                        <td><input type="number" id="txt_edad"></td>
-                    </tr>
-                    <tr>
-                        <td>Peso Actual</td>
-                        <td><input type="number" id="txt_peso_actual"></td>
-                    </tr>
-                    <tr>
-                        
-                        <td><button type="button" onclick="calcularPesoIdeal();">calcular</button></td>
-                    </tr>
-                </table>
-            </form>
+        <form id="frmPesoIdeal">
+          <div class="mb-3">
+            <label for="txt_edad" class="form-label">Edad</label>
+            <input
+              type="email"
+              class="form-control"
+              id="txt_edad"
+              aria-describedby="emailHelp"
+            />
+            <div id="txt_edad_help" class="form-text">
+              Ingrese un valor entre 1 y 10
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="txt_peso_actual" class="form-label"
+              >Peso actual</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="txt_peso_actual"
+            />
+            <div id="txt_peso_help" class="form-text">
+              Ingrese un valor entre 1 y 10
+            </div>
+          </div>
+          <input type="button" class="btn btn-primary" onclick="calcularPesoIdeal();" value="Calcular">
+        </form>
+        
+          <!--resultados-->
+          <div id="cnt_peso_ideal"></div>
+          <!--estado de peso-->
+          <div id="cnt_estado_peso_texto"></div>
+          <!--diferencia de peso si existe-->
+          <div id="cnt_diferencia_peso"></div>
+          <!--estado de peso en imagen-->
+          <div id="cnt_estado_peso_imagen"></div>
         </div>
-        <!--resultados-->
-        <div id="cnt_peso_ideal"></div>
-        <!--estado de peso-->
-        <div id="cnt_estado_peso_texto"></div>
-        <!--diferencia de peso si existe-->
-        <div id="cnt_diferencia_peso"></div>
-        <!--estado de peso en imagen-->
-        <div id="cnt_estado_peso_imagen"></div>
-      </div>    
+      </div>
     </div>
   </body>
 </html>
