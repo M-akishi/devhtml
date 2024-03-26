@@ -16,21 +16,30 @@ function calcularPesoIdeal() {
 function calcularEstadoPeso(pesoIdeal) {
   //capturamos el peso actual
   var pesoActual = document.getElementById("txt_peso_actual").value;
-  var estadoPeso = "";
   var imagen = "";
   var diferenciaPeso = "";
 
   //estructura de decision para comparar peso actual y peso ideal
+  var cntEstadoPesoTexto = document.getElementById("cnt_estado_peso_texto")
   if (pesoActual == pesoIdeal) {
-    estadoPeso = '<div class="alert alert-success" role="alert">Estado Peso: Peso correcto</div>';
+    cntEstadoPesoTexto.classList = '';
+    cntEstadoPesoTexto.classList.add("alert", "alert-success");
+    cntEstadoPesoTexto.setAttribute("role","alert");
+    cntEstadoPesoTexto.textContent = "Estado Peso : CORRECTO";
     imagen = "correctweight.png";
   } else {
     //evaluamos si esta sobrepeso o bajo peso
     if (pesoActual > pesoIdeal) {
-      estadoPeso = '<div class="alert alert-danger" role="alert">Estado Peso: Sobrepeso</div>';
+      cntEstadoPesoTexto.classList = '';
+      cntEstadoPesoTexto.classList.add("alert", "alert-danger");
+      cntEstadoPesoTexto.setAttribute("role","alert");
+      cntEstadoPesoTexto.textContent = "Estado Peso : SOBREPESO";
       imagen = "overweight.png";
     } else {
-      estadoPeso = '<div class="alert alert-warning" role="alert">Estado Peso: Bajo Peso</div>';
+      cntEstadoPesoTexto.classList = '';
+      cntEstadoPesoTexto.classList.add("alert", "alert-warning");
+      cntEstadoPesoTexto.setAttribute("role","alert");
+      cntEstadoPesoTexto.textContent = "Estado Peso : BAJO PESO";
       imagen = "underweight.png";
     }
   }
@@ -48,7 +57,6 @@ function calcularEstadoPeso(pesoIdeal) {
     document.getElementById("cnt_diferencia_peso").innerHTML = `No hay diferencia de peso`;
   }
 
-  document.getElementById("cnt_estado_peso_texto").innerHTML = estadoPeso;
   document.getElementById(
     "cnt_estado_peso_imagen"
   ).innerHTML = `<img src="img/${imagen}" width="128" height="128">`;
