@@ -45,16 +45,14 @@ function calcularEstadoPeso(pesoIdeal) {
   }
 
   diferenciaPeso = pesoActual - pesoIdeal;
+  var cntDiferenciaPeso = document.getElementById("cnt_diferencia_peso")
   //control de estado de peso
   if (diferenciaPeso > 0) {
-    document.getElementById(
-      "cnt_diferencia_peso"
-    ).innerHTML = `Diferencia de peso: ${diferenciaPeso} kg sobre el peso ideal`;
+    cntDiferenciaPeso.textContent = `Diferencia de peso: ${diferenciaPeso} kg sobre el peso ideal`;
   } else if (diferenciaPeso < 0) {
-    document.getElementById("cnt_diferencia_peso")
-    .innerHTML = `Diferencia de peso: ${diferenciaPeso} kg bajo el peso ideal`;
+    cntDiferenciaPeso.textContent = `Diferencia de peso: ${diferenciaPeso} kg bajo el peso ideal`;
   } else {
-    document.getElementById("cnt_diferencia_peso").innerHTML = `No hay diferencia de peso`;
+    cntDiferenciaPeso.textContent = `No hay diferencia de peso`;
   }
 
   document.getElementById(
