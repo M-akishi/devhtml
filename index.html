@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div>
+    <div id="father">
       <h1>peso ideal</h1>
       <hr />
-      <div>
+      <div id="forms">
         <div>ingrese los datos solicitados</div>
         <div>
             <form>
@@ -23,7 +23,8 @@
                         <td><input type="number" id="txt_peso_actual"></td>
                     </tr>
                     <tr>
-                        <td><input type="button" value="calcular" onclick="calcularPesoIdeal();"></td>
+                        
+                        <td><button type="button" onclick="calcularPesoIdeal();">calcular</button></td>
                     </tr>
                 </table>
             </form>
