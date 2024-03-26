@@ -1,0 +1,42 @@
+<html lang="es">
+  <head>
+    <title>Document</title>
+    <!--vinculamos el archivo js-->
+    <script src="js/funciones.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div>
+      <h1>peso ideal</h1>
+      <hr />
+      <div>
+        <div>ingrese los datos solicitados</div>
+        <div>
+            <form>
+                <table>
+                    <tr>
+                        <td>Edad</td>
+                        <td><input type="number" id="txt_edad"></td>
+                    </tr>
+                    <tr>
+                        <td>Peso Actual</td>
+                        <td><input type="number" id="txt_peso_actual"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" value="calcular" onclick="calcularPesoIdeal();"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!--resultados-->
+        <div id="cnt_peso_ideal"></div>
+        <!--estado de peso-->
+        <div id="cnt_estado_peso_texto"></div>
+        <!--diferencia de peso si existe-->
+        <div id="cnt_diferencia_peso"></div>
+        <!--estado de peso en imagen-->
+        <div id="cnt_estado_peso_imagen"></div>
+      </div>    
+    </div>
+  </body>
+</html>
