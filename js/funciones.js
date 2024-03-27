@@ -10,6 +10,7 @@ function calcularPesoIdeal() {
 
   //Calculamos estado de peso
   calcularEstadoPeso(pesoIdeal);
+  document.getElementById("card").setAttribute("style","width: 18rem; display: block");
 }
 
 //funcion para estado de peso
@@ -22,22 +23,19 @@ function calcularEstadoPeso(pesoIdeal) {
   //estructura de decision para comparar peso actual y peso ideal
   var cntEstadoPesoTexto = document.getElementById("cnt_estado_peso_texto")
   if (pesoActual == pesoIdeal) {
-    cntEstadoPesoTexto.classList = '';
-    cntEstadoPesoTexto.classList.add("alert", "alert-success");
+    cntEstadoPesoTexto.classList = 'alert alert-success';
     cntEstadoPesoTexto.setAttribute("role","alert");
     cntEstadoPesoTexto.textContent = "Estado Peso : CORRECTO";
     imagen = "correctweight.png";
   } else {
     //evaluamos si esta sobrepeso o bajo peso
     if (pesoActual > pesoIdeal) {
-      cntEstadoPesoTexto.classList = '';
-      cntEstadoPesoTexto.classList.add("alert", "alert-danger");
+      cntEstadoPesoTexto.classList = 'alert alert-danger';
       cntEstadoPesoTexto.setAttribute("role","alert");
       cntEstadoPesoTexto.textContent = "Estado Peso : SOBREPESO";
       imagen = "overweight.png";
     } else {
-      cntEstadoPesoTexto.classList = '';
-      cntEstadoPesoTexto.classList.add("alert", "alert-warning");
+      cntEstadoPesoTexto.classList = 'alert alert-warning';
       cntEstadoPesoTexto.setAttribute("role","alert");
       cntEstadoPesoTexto.textContent = "Estado Peso : BAJO PESO";
       imagen = "underweight.png";
@@ -49,13 +47,15 @@ function calcularEstadoPeso(pesoIdeal) {
   //control de estado de peso
   if (diferenciaPeso > 0) {
     cntDiferenciaPeso.textContent = `Diferencia de peso: ${diferenciaPeso} kg sobre el peso ideal`;
+    cntDiferenciaPeso.classList = "badge text-bg-danger"
   } else if (diferenciaPeso < 0) {
     cntDiferenciaPeso.textContent = `Diferencia de peso: ${diferenciaPeso} kg bajo el peso ideal`;
+    cntDiferenciaPeso.classList = "badge text-bg-warning"
   } else {
     cntDiferenciaPeso.textContent = `No hay diferencia de peso`;
+    cntDiferenciaPeso.classList = "badge text-bg-success"
   }
 
-  document.getElementById(
-    "cnt_estado_peso_imagen"
-  ).innerHTML = `<img src="img/${imagen}" width="128" height="128">`;
+  var cntEstadoPesoImagen = document.getElementById("cnt_estado_peso_imagen")
+  cntEstadoPesoImagen.setAttribute("src","img/"+imagen);  
 }

@@ -17,8 +17,7 @@
     ></script>
   </head>
   <body>
-    <div class="container">
-      <div id="father">
+    <div id="father" class="container">
         <nav class="navbar bg-primary" data-bs-theme="dark">
           <div class="container-fluid">
             <span class="navbar-brand mb-0 h1">PESO IDEAL</span>
@@ -53,16 +52,19 @@
           </div>
           <input type="button" class="btn btn-primary" onclick="calcularPesoIdeal();" value="Calcular">
         </form>
-        
-          <!--resultados-->
+
+        <div id="card" class="card" style="width: 18rem; display: none">
+          <img id="cnt_estado_peso_imagen" class="card-img-top" width="200" height="250">
+          <div class="card-body">
+            <!--resultados-->
           <div id="cnt_peso_ideal"></div>
           <!--estado de peso-->
           <div id="cnt_estado_peso_texto"></div>
           <!--diferencia de peso si existe-->
-          <div id="cnt_diferencia_peso"></div>
-          <!--estado de peso en imagen-->
-          <div id="cnt_estado_peso_imagen"></div>
+          <span id="cnt_diferencia_peso"></span>
+          </div>
         </div>
+
       </div>
     </div>
   </body>
