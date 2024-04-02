@@ -46,7 +46,7 @@ function calcularEstadoPeso(pesoIdeal) {
   var cntDiferenciaPeso = document.getElementById("cnt_diferencia_peso")
   //control de estado de peso
   if (diferenciaPeso > 0) {
-    cntDiferenciaPeso.textContent = `Diferencia de peso: ${diferenciaPeso} kg sobre el peso ideal, <br> le recomiendo que baje de peso`;
+    cntDiferenciaPeso.textContent = `Diferencia de peso: ${diferenciaPeso} kg sobre el peso ideal`;
     cntDiferenciaPeso.classList = "badge text-bg-danger"
   } else if (diferenciaPeso < 0) {
     cntDiferenciaPeso.textContent = `Diferencia de peso: ${diferenciaPeso} kg bajo el peso ideal`;
