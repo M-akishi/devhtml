@@ -17,18 +17,14 @@
     ></script>
   </head>
   <body>
+    <nav id="navbar1" class="navbar sticky-top bg-primary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">PESO IDEAL</span>
+      </div>
+    </nav>
     <div id="father" class="container">
-      <nav
-        id="navbar1"
-        class="navbar sticky-top bg-primary"
-        data-bs-theme="dark"
-      >
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1">PESO IDEAL</span>
-        </div>
-      </nav>
       <hr />
-      <div class="row">
+      <div class="row justify-content-md-center">
         <div class="col">
           <div>ingrese los datos solicitados</div>
           <form id="frmPesoIdeal">
@@ -57,20 +53,26 @@
           </form>
         </div>
         <div class="col">
-          <div id="card" class="card" style="width: 18rem; display: none">
-            <img
-              id="cnt_estado_peso_imagen"
-              class="card-img-top"
-              width="200"
-              height="250"
-            />
+          <div id="card" class="card" style="display: none">
             <div class="card-body">
-              <!--resultados-->
-              <div id="cnt_peso_ideal"></div>
-              <!--estado de peso-->
-              <div id="cnt_estado_peso_texto"></div>
-              <!--diferencia de peso si existe-->
-              <div id="cnt_diferencia_peso"></div>
+              <div class="row">
+                <div class="col">
+                  <!--resultados-->
+                  <div id="cnt_peso_ideal"></div>
+                  <!--estado de peso-->
+                  <div id="cnt_estado_peso_texto"></div>
+                  <!--diferencia de peso si existe-->
+                  <div id="cnt_diferencia_peso"></div>
+                </div>
+                <div class="col d-flex flex-row-reverse">
+                  <img
+                    id="cnt_estado_peso_imagen"
+                    class="p-2"
+                    width="200"
+                    height="250"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

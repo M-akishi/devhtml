@@ -10,7 +10,7 @@ function calcularPesoIdeal() {
 
   //Calculamos estado de peso
   calcularEstadoPeso(pesoIdeal);
-  document.getElementById("card").setAttribute("style","width: 18rem; display: block");
+  document.getElementById("card").setAttribute("style","width: auto; display: block");
 }
 
 //funcion para estado de peso
